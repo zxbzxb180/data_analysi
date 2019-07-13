@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <form method="post" action="{% url 'check' %}">
+        {%csrf_token%}
+        <input type="text" name="city" placeholder="城市"><br>
+        <input type="text" name="year_of_project" placeholder="项目立项年份"><br>
+        <input type="text" name="land_area" placeholder="土地面积(亩)"><br>
+        <input type="text" name="industrial_land_expense" placeholder="工业用地费用(万/亩)"><br>
+        <input type="text" name="commercial_land" placeholder="商业用地(万/亩)"><br>
+        <input type="text" name="residential_land" placeholder="住宅用地(万/亩)"><br>
+        <input type="submit" value="存入"><br>
+    </form>
+</body>
+</html>
