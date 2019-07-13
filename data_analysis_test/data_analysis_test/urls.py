@@ -19,6 +19,9 @@ from data_analysis import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('save_data/', views.save_data, name='check'),
+    path('', views.save_data, name='save'),
+    path('show_1/', views.show_data, name='show'),
+    path('post/', views.post_data, name='post')
+
+
 ]
