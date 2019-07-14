@@ -1,1 +1,30 @@
-num_racks, single_stand_power, built_area, KW_equipment_cost, KW_project_cost, final_shelving_rate, full_mouth_on_rack, KW_price, PUE, simultaneous_coefficient, electric_charge, water_charge, water_use_rate, broadband_rent, rack_bandwidth, new_people_num, annual_average_wage, wage_add_rate, welfare_funds, low_value_consumables, management_fee, depreciation_years, land_architecture, equipment, residual_rate, depreciation_method, VAT_rate, electromechanical_equipment, Installation_works, electric_oil_VAT, water_VAT, company_income_tax_rate, borrow_interest, borrow_years, borrow_matching, borrow_poundage, discount_rate, VAT, cabinet_rental_VAT, bandwidth_service_VAT, cloud_computing_service_VAT, VAT_supertax_rate, land_VAT, construction_tax
+import pymysql
+# 打开数据库连接
+db = pymysql.connect("127.0.0.1", "root", "123456", "data_analysis", charset='utf8')
+
+# 使用cursor()方法获取操作游标
+cursor = db.cursor()
+
+# SQL 查询语句
+sql = "SELECT * FROM basic_data"
+try:
+    # 执行SQL语句
+    cursor.execute(sql)
+    # 获取所有记录列表
+    results = cursor.fetchone()
+    print(results)
+    print(len(results))
+
+    num_racks = float(results[6])
+    final_shelving_rate = float(results[17])
+    full_mouth_on_rack = float(results[18])
+    # 打印结果
+    print(num_racks, final_shelving_rate, full_mouth_on_rack)
+    # print(results)
+except:
+    print("Error: unable to fetch data")
+
+# 关闭数据库连接
+db.close()
+
+

@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <form method="post" action="{% url 'post' %}">
+    <form method="post" action="{% url 'save' %}">
         {%csrf_token%}
         <h3>基本数据</h3>
         <input type="text" name="city" placeholder="城市">
@@ -22,7 +22,7 @@
         <input type="text" name="residential_land" placeholder="住宅用地(万/亩)">
         <input type="text" name="num_racks" placeholder="机架数量（个）">
         <input type="text" name="single_stand_power" placeholder="单机架IT功率（KW）">
-        <input type="text" name="built_area" placeholder="建筑面积 (m2)">
+        <input type="text" name="built_price" placeholder="建筑物造价（元/m2)">
         <input type="text" name="KW_equipment_cost" placeholder="单KW机电设备建设成本（万元）"><br>
         <input type="text" name="KW_project_cost" placeholder="单KW机电工程建设成本（万元）">
         <input type="text" name="final_shelving_rate" placeholder="终局上架率">
@@ -70,19 +70,20 @@
 
 
 
-        <input type="submit" value="存入"style="width: 50px"><br>
+        <input type="submit" value="存入"style="width: 50px">
     </form>
+    <h4>提示：请将所有含百分号的数据换算成小数！</h4>
     <hr>
 
 
-    <div style="color:#00FF00">
-        <h3><a href="/show_data">上柜节奏</a></h3>
-        <h3><a href="/show_data">营业收入测算</a></h3>
-        <h3><a href="/show_data">总成本测算</a></h3>
-        <h3><a href="/show_data">固定资产折旧</a></h3>
-        <h3><a href="/show_data">投资租赁</a></h3>
-        <h3><a href="/show_data">利润表</a></h3>
-        <h3><a href="/show_data">现金流表</a></h3>
+    <div>
+        <h3><a href="/show_1">上柜节奏</a></h3>
+        <h3><a href="/show_2">营业收入测算</a></h3>
+        <h3><a href="/show_3">总成本测算</a></h3>
+        <h3><a href="/show_4">固定资产折旧</a></h3>
+        <h3><a href="/show_5">投资租赁</a></h3>
+        <h3><a href="/show_6">利润表</a></h3>
+        <h3><a href="/show_7">现金流表</a></h3>
     </div>
 
 </body>
