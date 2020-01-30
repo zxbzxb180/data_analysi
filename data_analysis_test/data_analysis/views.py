@@ -95,6 +95,8 @@ def show_1(request):
     conn.close()
     print(results)
     print(len(results))
+
+
     num_racks = int(results[6])
     final_shelving_rate = float(results[17])
     full_mouth_on_rack = int(results[18])
